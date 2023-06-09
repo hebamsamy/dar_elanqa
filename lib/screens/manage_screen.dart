@@ -1,5 +1,6 @@
 import 'package:dar_elanaqa/pages/bookingTab.dart';
 import 'package:dar_elanaqa/pages/rentaltab.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../Constant.dart';
 import '../pages/expenseTab.dart';
@@ -17,7 +18,30 @@ class _ManagementScreenState extends State<ManagementScreen> {
     Text("تسجيل حجز جديدة"),
     Text("تسجيل نفقه جديدة")
   ];
+  var currentAccount = FirebaseAuth.instance.currentUser;
+
   List<Color> cols = [GreenColor, PrimaryColor, RedColor];
+  Widget isAuth() {
+    if (currentAccount!.email != "seller@darelanqa.com") {
+      return OutlinedButton.icon(
+        label: Text("عرض"),
+        icon: Icon(Icons.show_chart),
+        onPressed: () {
+          Navigator.of(context).pushNamed("/reports");
+        },
+        style: OutlinedButton.styleFrom(
+          foregroundColor: WhiteColor,
+          backgroundColor: PrimaryColor,
+          elevation: 5,
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(50))),
+        ),
+      );
+    } else {
+      return Text(
+          "اليوم ${DateTime.now().day} - ${DateTime.now().month} - ${DateTime.now().year}");
+    }
+  }
 
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -33,20 +57,7 @@ class _ManagementScreenState extends State<ManagementScreen> {
                 "التقارير",
                 style: TextStyle(color: BlackColor, fontSize: 25),
               ),
-              OutlinedButton.icon(
-                label: Text("عرض"),
-                icon: Icon(Icons.show_chart),
-                onPressed: () {
-                  Navigator.of(context).pushNamed("/reports");
-                },
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: WhiteColor,
-                  backgroundColor: PrimaryColor,
-                  elevation: 5,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(50))),
-                ),
-              ),
+              isAuth(),
             ],
           ),
           bottom: TabBar(

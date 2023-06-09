@@ -4,6 +4,7 @@ import 'package:dar_elanaqa/logic/models/product.dart';
 import 'package:dar_elanaqa/widgets/loader.dart';
 import 'package:dar_elanaqa/widgets/placeholder.dart';
 import 'package:dar_elanaqa/widgets/productItem.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AssetsScreen extends StatefulWidget {
@@ -14,6 +15,8 @@ class AssetsScreen extends StatefulWidget {
 }
 
 class _AssetsScreenState extends State<AssetsScreen> {
+  var currentAccount = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -22,18 +25,21 @@ class _AssetsScreenState extends State<AssetsScreen> {
         return Scaffold(
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,
-          floatingActionButton: FloatingActionButton.extended(
-            onPressed: () {
-              Navigator.of(context).pushNamed("/add-product");
-            },
-            icon: Icon(Icons.add),
-            label: Text("منتج جديد"),
-            foregroundColor: WhiteColor,
-            backgroundColor: PrimaryColor,
-            elevation: 5,
-            shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(50))),
-          ),
+          floatingActionButton:
+              (currentAccount!.email != "seller@darelanqa.com")
+                  ? FloatingActionButton.extended(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/add-product");
+                      },
+                      icon: Icon(Icons.add),
+                      label: Text("منتج جديد"),
+                      foregroundColor: WhiteColor,
+                      backgroundColor: PrimaryColor,
+                      elevation: 5,
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                    )
+                  : null,
           body: (snapshot.connectionState == ConnectionState.active ||
                   snapshot.connectionState == ConnectionState.done)
               ? snapshot.data?.docs.length == 0

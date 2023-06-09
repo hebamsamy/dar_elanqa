@@ -103,7 +103,8 @@ class _BookingScreenState extends State<BookingScreen> {
         onOkPressed: () {
           fdb.collection("bookings").doc(booking.Id).delete().then((res) {
             Navigator.of(context).pop();
-            Navigator.of(context).pushReplacementNamed("/add-bill");
+            Navigator.of(context)
+                .pushReplacementNamed("/add-bill", arguments: booking);
           });
         },
         optinalActionText: "الغاء",

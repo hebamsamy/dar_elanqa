@@ -200,7 +200,7 @@ class _AddBookingScreenState extends State<AddBookingScreen> {
                             });
                           },
                           decoration: InputDecoration(
-                            helperText: "يجب ادخال الكود اولا",
+                            helperText: " يجب ادخال الكود ثم اضغط علي البحث",
                             icon: IconButton(
                                 onPressed: getProduct,
                                 icon: Icon(Icons.search)),
