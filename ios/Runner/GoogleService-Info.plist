@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>26286571820-kc26vhmhm02l73v3c4gdrmcqi1eskoue.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.26286571820-kc26vhmhm02l73v3c4gdrmcqi1eskoue</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSixIg3kTLN4_7uh15tt2ORq7kfvnpd2U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>26286571820</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.darElanaqa</string>
+	<key>PROJECT_ID</key>
+	<string>cashiar</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cashiar.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:26286571820:ios:492776f9a6392ac81cec89</string>
+</dict>
+</plist>

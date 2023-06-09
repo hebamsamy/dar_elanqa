@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "327448255808",
+    "project_id": "dar-elanaqa",
+    "storage_bucket": "dar-elanaqa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327448255808:android:9bd638eef39c10adc46ea5",
+        "android_client_info": {
+          "package_name": "com.example.dar_elanaqa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327448255808-0b8hr85e1sphmca5veq7mtlr6n5hl10u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1UxtY8AbTRgMrzyKSjH-Zn5mt_cJ8M5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327448255808-0b8hr85e1sphmca5veq7mtlr6n5hl10u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
